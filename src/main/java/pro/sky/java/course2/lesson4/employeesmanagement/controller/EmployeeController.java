@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import pro.sky.java.course2.lesson4.employeesmanagement.data.Employee;
 import pro.sky.java.course2.lesson4.employeesmanagement.service.EmployeeService;
 
+import java.util.List;
+
 @RequestMapping("/employee")
 @RestController
 public class EmployeeController {
@@ -34,8 +36,8 @@ public class EmployeeController {
         return employees.findEmployee(lastName, firstName);
     }
 
-    @GetMapping("/get")
-    public EmployeeService getEmployeesList() {
-        return employees;
+    @GetMapping("/all")
+    public List<Employee> getEmployeesList() {
+        return employees.getEmployeesList();
     }
 }
